@@ -588,3 +588,125 @@ View Transitions
         animation-duration: 0.01ms;
     }
 }
+
+
+/* Homework 5 - Random Facts Web Component */
+
+fact-panel {
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.fact-card {
+    background-color: var(--card-color, #ffffff);
+    color: var(--text-color, #263238);
+    border: 2px solid var(--border-color, #c9d5e2);
+    border-radius: 0.75rem;
+    padding: 2rem;
+}
+
+.fact-card h2 {
+    margin-top: 0;
+}
+
+.fact-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    margin: 1.5rem 0;
+}
+
+.fact-status {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.fact-source {
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Compact component appearance */
+.fact-card.compact-mode {
+    padding: 1rem;
+}
+
+.compact-mode .fact-text {
+    font-size: 1rem;
+    margin: 0.75rem 0;
+}
+
+/* External component control */
+#mode-toggle {
+    margin-top: 1rem;
+}
+
+/* Keep buttons readable in both themes */
+.fact-card button,
+#mode-toggle {
+    background-color: #2874a6;
+    color: #ffffff;
+}
+
+.fact-card button:hover,
+#mode-toggle:hover {
+    background-color: #17365d;
+}
+
+/* Preserve hidden elements */
+fact-panel [hidden],
+#mode-toggle[hidden] {
+    display: none;
+}
+
+/* Keyboard accessibility */
+.fact-card button:focus-visible,
+#mode-toggle:focus-visible {
+    outline: 3px solid #ef9b28;
+    outline-offset: 3px;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .fact-card {
+        padding: 1rem;
+    }
+
+    .fact-text {
+        font-size: 1.1rem;
+    }
+
+    .fact-card button,
+    #mode-toggle {
+        max-width: 100%;
+    }
+}
+
+/* Homework 5 Part 2: API request feedback */
+
+.fact-success {
+    color: #267d45;
+}
+
+.fact-error {
+    color: #b3261e;
+}
+
+/* Dark mode feedback colors */
+:root[data-theme="dark"] .fact-success {
+    color: #85dfac;
+}
+
+:root[data-theme="dark"] .fact-error {
+    color: #ffb4b4;
+}
+
+/* Disabled button during API requests */
+.fact-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
