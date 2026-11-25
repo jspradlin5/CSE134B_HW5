@@ -1,0 +1,188 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home | Jude Spradlin</title>
+
+    <meta name="description"
+          content="Jude Spradlin's Computer Engineering portfolio featuring hardware, software, and engineering projects.">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <p>Jude Spradlin's Portfolio</p>
+
+        <nav aria-label="Primary navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="experiments.html">Experiments</a></li>
+                <li><a href="form-no-js.html">Form (No JS)</a></li>
+                <li><a href="form-with-js.html">Form (With JS)</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" type="button" hidden>
+            Switch to Dark Mode
+        </button>
+    </header>
+
+    <main id="content">
+
+        <h1>Jude Spradlin - Computer Engineering</h1>
+
+        <section aria-labelledby="intro">
+            <h2 id="intro">Welcome</h2>
+
+            <p>
+                I'm a Computer Engineering student at UC San Diego
+                interested in hardware design, embedded systems,
+                and software development. This portfolio highlights
+                my projects, experience, and technical skills.
+            </p>
+
+            <p>
+                Start with the
+                <a href="projects.html">project write-ups</a>
+                or learn more on the
+                <a href="about.html">About page</a>.
+                The aim is to show the thinking behind each project,
+                not only its title.
+            </p>
+
+            <p>
+                <b>Current focus:</b>
+                <em>
+                    Connecting systems knowledge to practical
+                    engineering problems.
+                </em>
+            </p>
+
+            <p>
+                <span>Interests:</span>
+                Hardware design, operating systems,
+                machine learning, and testing.
+            </p>
+        </section>
+
+        <section>
+            <h2>Featured Work</h2>
+
+            <article>
+                <h3>Machine Learning: Soccer Prediction Model</h3>
+
+                <p>
+                    Developed a machine learning project using
+                    Bayesian Networks and Hidden Markov Models
+                    to analyze soccer data and predict
+                    scoring opportunities.
+                </p>
+
+                <p>
+                    <a href="projects.html#sports-model">
+                        Read the Project Notes
+                    </a>
+                </p>
+            </article>
+
+            <article>
+                <h3>Operating Systems: Nachos</h3>
+
+                <p>
+                    Implemented operating system features in
+                    Nachos, including thread synchronization,
+                    process management, and virtual memory.
+                </p>
+
+                <p>
+                    <a href="projects.html#nachos">
+                        Explore the Operating Systems Project
+                    </a>
+                </p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Technical Interests</h2>
+
+            <p>
+                I enjoy working on projects that combine
+                hardware and software to solve engineering
+                problems.
+            </p>
+
+            <ul>
+                <li>Hardware Engineering</li>
+                <li>Embedded Systems</li>
+                <li>Software Development</li>
+                <li>Digital Circuit Design</li>
+                <li>Machine Learning</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>How to Use This Site</h2>
+
+            <p>
+                This portfolio contains information about
+                my education, engineering projects,
+                experience, and technical skills.
+            </p>
+
+            <ol>
+                <li>Read about my engineering projects.</li>
+                <li>Review the methods and technologies used.</li>
+                <li>Learn about my skills and experience.</li>
+                <li>Contact me for professional opportunities.</li>
+            </ol>
+
+            <p>
+                Visit the
+                <a href="experiments.html">HTML Experiments</a>
+                page for demonstrations of different
+                HTML elements.
+            </p>
+        </section>
+
+        <console-greeting></console-greeting>
+
+        <noscript>
+            <p>
+                This portfolio remains readable without JavaScript.
+                The console greeting demonstration requires
+                JavaScript to run.
+            </p>
+        </noscript>
+
+    </main>
+
+    <footer>
+        <p>
+            Jude Spradlin | Computer Engineering | UC San Diego
+        </p>
+    </footer>
+
+    <script>
+        class ConsoleGreeting extends HTMLElement {
+            connectedCallback() {
+                console.log('Hello World!');
+            }
+        }
+
+        customElements.define('console-greeting', ConsoleGreeting);
+    </script>
+
+</body>
+</html>

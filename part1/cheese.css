@@ -1,0 +1,164 @@
+/*
+Name: Jude Spradlin
+Repository: https://github.com/jspradlin5/CSE134B_HW3
+*/
+/* General page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    background-color: #fffdf5;
+}
+
+/* Main heading */
+h1 {
+    font-size: 2.5rem;
+    color: #a65c00;
+    margin-bottom: 0.5rem;
+}
+
+/* Section headings */
+h2 {
+    font-size: 1.6rem;
+    color: #805000;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Header */
+header {
+    border-bottom: 2px solid #d9b36c;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Paragraph spacing */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Latin terms */
+.latin {
+    font-style: italic;
+}
+
+/* Warning message */
+#warning {
+    background-color: #fff0cc;
+    border: 1px solid #e0a100;
+    padding: 1rem;
+}
+
+/* Cheese definitions */
+dt {
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+dd {
+    margin-bottom: 1rem;
+}
+
+/* Blockquote styling */
+blockquote {
+    border-left: 5px solid #c28a35;
+    background-color: #f8f0dc;
+    margin: 2rem 1rem;
+    padding: 1rem 1.5rem;
+}
+
+/* Links */
+a {
+    color: #995500;
+    text-decoration: underline;
+}
+
+/* Hover effect */
+a:hover {
+    color: #cc6600;
+    background-color: #fff0cc;
+}
+
+/* Keyboard focus */
+a:focus,
+input:focus,
+button:focus {
+    outline: 3px solid #cc6600;
+    outline-offset: 3px;
+}
+
+/* Form styling */
+fieldset {
+    border: 2px solid #d9b36c;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+legend {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #888888;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    background-color: #a65c00;
+    color: white;
+    border: 1px solid #805000;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc7700;
+}
+
+/* Cascade demonstration: first rule */
+section {
+    margin-bottom: 1rem;
+}
+
+/*
+Cascade demonstration:
+Both rules use the same selector and set margin-bottom.
+The later rule wins because it appears afterward
+and both rules have equal specificity.
+*/
+section {
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+body > footer {
+    border-top: 2px solid #d9b36c;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"] {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
