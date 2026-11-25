@@ -162,19 +162,63 @@ class FactPanel extends HTMLElement {
 // Register the custom element.
 customElements.define("fact-panel", FactPanel);
 
+
 // External compact/expanded mode control.
 const factPanel = document.querySelector("#random-facts");
 const modeToggle = document.querySelector("#mode-toggle");
 
+const storageKey = "hw5-fact-panel-mode";
+
 if (factPanel && modeToggle) {
-    modeToggle.hidden = false;
 
+    // Apply the selected mode and update the button.
+    function applyMode(mode) {
+        const compact = mode === "compact";
+
+        factPanel.toggleAttribute("compact", compact);
+
+        modeToggle.textContent = compact
+            ? "Switch to Expanded Mode"
+            : "Switch to Compact Mode";
+    }
+
+    // Default to expanded mode.
+    let savedMode = "expanded";
+
+    // Restore the saved preference.
+    try {
+        const storedValue = localStorage.getItem(storageKey);
+
+        if (
+            storedValue === "compact" ||
+            storedValue === "expanded"
+        ) {
+            savedMode = storedValue;
+        }
+
+    } catch (error) {
+        console.warn("Could not read component preference:", error);
+    }
+
+    applyMode(savedMode);
+
+    // Change and save the preference.
     modeToggle.addEventListener("click", () => {
-        factPanel.toggleAttribute("compact");
+        const newMode = factPanel.hasAttribute("compact")
+            ? "expanded"
+            : "compact";
 
-        modeToggle.textContent =
-            factPanel.hasAttribute("compact")
-                ? "Switch to Expanded Mode"
-                : "Switch to Compact Mode";
+        // Apply the change even if storage is unavailable.
+        applyMode(newMode);
+
+        try {
+            localStorage.setItem(storageKey, newMode);
+
+        } catch (error) {
+            console.warn("Could not save component preference:", error);
+        }
     });
+
+    // Reveal the control after JavaScript initializes.
+    modeToggle.hidden = false;
 }
