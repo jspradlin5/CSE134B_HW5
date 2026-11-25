@@ -1,0 +1,725 @@
+/*
+Name: Jude Spradlin
+Repository: https://github.com/jspradlin5/CSE134B_HW4
+*/
+
+/* CSS custom properties */
+:root {
+    --primary-color: #17365d;
+    --secondary-color: #2874a6;
+    --background-color: #f4f7fb;
+    --text-color: #263238;
+    --card-color: #ffffff;
+    --border-color: #c9d5e2;
+    --font-family: Arial, Helvetica, sans-serif;
+    --page-width: 1100px;
+}
+
+/* General styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Header */
+body > header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+body > header > p {
+    max-width: var(--page-width);
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navigation layout using Flexbox */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 0.8em;
+    border-radius: 0.3rem;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Attribute selector: current navigation page */
+nav a[aria-current="page"] {
+    background-color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Main content */
+main {
+    max-width: var(--page-width);
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    min-height: 60vh;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+}
+
+h1, h2, h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Adjacent sibling combinator:
+   Adds spacing to paragraphs directly following headings */
+h2 + p {
+    margin-top: 0.5rem;
+}
+
+/* Child combinator:
+   Styles sections directly inside main */
+main > section {
+    background-color: var(--card-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+/* Descendant selector:
+   Styles articles inside sections */
+section article {
+    background-color: var(--card-color);
+    padding: 1.25rem;
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+}
+
+/* Featured project custom element */
+project-highlight {
+    display: block;
+    padding: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    background-color: #edf5fc;
+}
+
+/* Paragraphs and lists */
+p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.4rem;
+}
+
+/* Links */
+main a {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+main a:hover {
+    color: var(--primary-color);
+    text-decoration-thickness: 2px;
+}
+
+/* Images and media */
+img, video, iframe, svg {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+iframe {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+}
+
+canvas {
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+}
+
+/* Forms */
+form {
+    margin-top: 1rem;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 0.4rem;
+    padding: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input, textarea, button {
+    font: inherit;
+}
+
+input, textarea {
+    max-width: 100%;
+    padding: 0.6em;
+    border: 1px solid #8294a5;
+    border-radius: 0.3rem;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.6em 1em;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Visible keyboard focus */
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+    outline: 3px solid #ef9b28;
+    outline-offset: 3px;
+}
+
+/* Progress indicator */
+progress {
+    width: 100%;
+    max-width: 350px;
+    height: 1.2rem;
+}
+
+/* Dialog */
+dialog {
+    max-width: min(90%, 450px);
+    border: 2px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+/* Footer */
+body > footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+body > footer p {
+    margin: 0;
+}
+
+/* Responsive design for phones */
+@media (max-width: 600px) {
+    body > header {
+        padding: 1rem;
+    }
+
+    body > header > p {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.6em;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+    main > section {
+        padding: 1rem;
+    }
+
+    section article {
+        padding: 0.75rem;
+    }
+
+    video, iframe {
+        width: 100%;
+    }
+}
+pre {
+    overflow-x: auto;
+}
+
+/* Allow long text and links to wrap */
+main {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    main,
+    main > section,
+    section article {
+        min-width: 0;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+}
+
+
+/* Homework 4: Contact form styling */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-field label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.35rem;
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+/* Indicate required fields */
+.form-field input:required,
+.form-field textarea:required {
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Show invalid fields only after user interaction */
+.form-field input:user-invalid,
+.form-field textarea:user-invalid {
+    border-color: #b3261e;
+    border-left-color: #b3261e;
+    background-color: #fff2f2;
+}
+
+/* Show valid fields after user interaction */
+.form-field input:user-valid,
+.form-field textarea:user-valid {
+    border-color: #267d45;
+    border-left-color: #267d45;
+}
+
+/* Accessible keyboard focus */
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+    outline: 3px solid #ef9b28;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .form-field input,
+    .form-field textarea {
+        max-width: 100%;
+    }
+}
+
+
+/* Homework 4 Part 3: JavaScript feedback */
+
+.form-feedback {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-feedback h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.field-error {
+    display: block;
+    color: #b3261e;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.field-error[hidden],
+#js-feedback[hidden] {
+    display: none;
+}
+
+.form-error-message {
+    color: #b3261e;
+    font-weight: bold;
+}
+
+.form-info-warning {
+    color: #9a5800;
+    font-weight: bold;
+}
+
+.form-info-limit {
+    color: #b3261e;
+    font-weight: bold;
+}
+
+
+/* Homework 4 Part 4: Theme switching */
+
+/* Light mode uses the existing :root colors. */
+
+/* Dark mode overrides shared CSS variables. */
+:root[data-theme="dark"] {
+    --primary-color: #a9cdf5;
+    --secondary-color: #80c5ff;
+    --background-color: #121a27;
+    --text-color: #edf2f8;
+    --card-color: #202d40;
+    --border-color: #52657e;
+}
+
+/* Header and footer use darker surfaces in dark mode */
+body > header,
+body > footer {
+    background-color: #17365d;
+    color: #ffffff;
+}
+
+:root[data-theme="dark"] body > header,
+:root[data-theme="dark"] body > footer {
+    background-color: #0a1220;
+}
+
+/* Keep navigation links readable */
+nav a {
+    color: #ffffff;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background-color: #2874a6;
+}
+
+/* Make form controls readable in both themes */
+.form-field input,
+.form-field textarea,
+input,
+textarea,
+select {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+/* Readable dark-mode validation styles */
+:root[data-theme="dark"] .form-field input:user-invalid,
+:root[data-theme="dark"] .form-field textarea:user-invalid {
+    background-color: #44252b;
+    color: #ffffff;
+    border-color: #ff9e9e;
+}
+
+:root[data-theme="dark"] .form-field input:user-valid,
+:root[data-theme="dark"] .form-field textarea:user-valid {
+    background-color: #193a32;
+    border-color: #85dfac;
+}
+
+:root[data-theme="dark"] .field-error,
+:root[data-theme="dark"] .form-error-message,
+:root[data-theme="dark"] .form-info-limit {
+    color: #ffb4b4;
+}
+
+:root[data-theme="dark"] .form-info-warning {
+    color: #ffd28a;
+}
+
+/* Featured project custom element */
+project-highlight {
+    background-color: var(--card-color);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    display: block;
+    margin: 1rem auto 0;
+    padding: 0.7em 1.2em;
+    background-color: #ffffff;
+    color: #17365d;
+    border: 2px solid #ffffff;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Preserve HTML hidden behavior */
+#theme-toggle[hidden] {
+    display: none;
+}
+
+#theme-toggle:hover {
+    background-color: #dbeafe;
+}
+
+#theme-toggle:focus-visible {
+    outline: 3px solid #ef9b28;
+    outline-offset: 4px;
+}
+
+
+/*
+Homework 4 - Part 4.2
+View Transitions
+*/
+
+/* Enable transitions between pages on the same website */
+@view-transition {
+    navigation: auto;
+}
+
+/* Customize the transition animation */
+::view-transition-old(root) {
+    animation: 0.25s ease-out both fade-out;
+}
+
+::view-transition-new(root) {
+    animation: 0.25s ease-in both fade-in;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Respect reduced-motion accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.01ms;
+    }
+}
+
+
+/* Homework 5 - Random Facts Web Component */
+
+
+/* Homework 5 Part 3: Component-specific theme properties */
+
+fact-panel {
+    --panel-background: var(--card-color, #ffffff);
+    --panel-text: var(--text-color, #263238);
+    --panel-border: var(--border-color, #c9d5e2);
+    --panel-heading: var(--primary-color, #17365d);
+
+    display: block;
+    margin-top: 1.5rem;
+}
+
+.fact-card {
+    background-color: var(--panel-background, #ffffff);
+    color: var(--panel-text, #263238);
+    border: 2px solid var(--panel-border, #c9d5e2);
+    border-radius: 0.75rem;
+    padding: 2rem;
+}
+
+.fact-card h2 {
+    color: var(--panel-heading, #17365d);
+}
+
+
+.fact-card h2 {
+    margin-top: 0;
+}
+
+.fact-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    margin: 1.5rem 0;
+}
+
+.fact-status {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.fact-source {
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Compact component appearance */
+.fact-card.compact-mode {
+    padding: 1rem;
+}
+
+.compact-mode .fact-text {
+    font-size: 1rem;
+    margin: 0.75rem 0;
+}
+
+/* External component control */
+#mode-toggle {
+    margin-top: 1rem;
+}
+
+/* Keep buttons readable in both themes */
+.fact-card button,
+#mode-toggle {
+    background-color: #2874a6;
+    color: #ffffff;
+}
+
+.fact-card button:hover,
+#mode-toggle:hover {
+    background-color: #17365d;
+}
+
+/* Preserve hidden elements */
+fact-panel [hidden],
+#mode-toggle[hidden] {
+    display: none;
+}
+
+/* Keyboard accessibility */
+.fact-card button:focus-visible,
+#mode-toggle:focus-visible {
+    outline: 3px solid #ef9b28;
+    outline-offset: 3px;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .fact-card {
+        padding: 1rem;
+    }
+
+    .fact-text {
+        font-size: 1.1rem;
+    }
+
+    .fact-card button,
+    #mode-toggle {
+        max-width: 100%;
+    }
+}
+
+/* Homework 5 Part 2: API request feedback */
+
+.fact-success {
+    color: #267d45;
+}
+
+.fact-error {
+    color: #b3261e;
+}
+
+/* Dark mode feedback colors */
+:root[data-theme="dark"] .fact-success {
+    color: #85dfac;
+}
+
+:root[data-theme="dark"] .fact-error {
+    color: #ffb4b4;
+}
+
+/* Disabled button during API requests */
+.fact-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
